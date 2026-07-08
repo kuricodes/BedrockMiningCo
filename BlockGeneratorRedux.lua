@@ -163,7 +163,7 @@ function GetRarityFromDepth(depth, first, mid, second, chance1, chance2)
 		rarityval = ( newdepth / newmid ) * chance1 --sneaky simple math
 	elseif depth > mid and depth <= second then
 		local newdepth = depth - mid
-		local newsecond = second - mid --not sneaky shit math but whatever it works and it's accurate
+		local newsecond = second - mid --not sneaky bad math but whatever it works and it's accurate
 		rarityval = ( ( ( 1 - ( newdepth / newsecond ) ) * chance1 ) * ( ( chance1 - chance2 ) / chance1 ) ) + chance2
 	elseif depth < first then --catch cases to avoid math if at all possible
 		rarityval = 0
@@ -178,7 +178,7 @@ local raritiescache = {}
 --every ore is listed in the raritiescache entry in order of priority
 --each ore's chance is calculated as a percentage of the remaining space in the cache entry
 --this way i can loop through the cache entry with only one random number to get the ore to be generated
---this may result in larger memory overhead but frankly i don't care it's not that big and it won't be infinite
+--this may result in larger memory overhead but it's not that big and it won't be infinite
 --i mean it COULD be but. it won't be
 function LayerRarityMaker(depthy)
 	local array = {}
@@ -237,8 +237,8 @@ end
 
 
 
-function Generateblock(posx, posy, posz, Override, PresetOre, CaveInfo, reroll) --perlin noise cave gen code poached wholesale from azure mines
-	local isCave = false --thanks berezaa idk where i'd be without you. probably in a dumpster behind a 7/11
+function Generateblock(posx, posy, posz, Override, PresetOre, CaveInfo, reroll) --perlin noise cave gen code heavily influenced by azure mines
+	local isCave = false --thanks berezaa idk where i'd be without you
 	local posvector = Vector3.new(Converterinone(posx), Converterintwo(posy), Converterinone(posz))
 	local returnval = false
 	local positionkey = PositionKey(posx,posy,posz)
