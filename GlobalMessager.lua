@@ -209,7 +209,7 @@ local function datastoreFunctionMult(value) --input increment amount in frontend
 	end)
 end
 
-local function SendMessage(dataAttached)
+local function SendMessage(dataAttached) --sends out the global message signal, attempts 3 times max
 	
 	if dataAttached.valueType == 1 then
 		datastoreFunction(dataAttached.value)
