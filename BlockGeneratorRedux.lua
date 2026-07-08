@@ -22,7 +22,7 @@ end
 --to check if the thing exists, look at value. if it's nil, it hasnt been generated, and if it's air, it has but was broken
 --thanks for that, berezaa
 --my code before involved checking the actual world for the blocks and using names to store coordinates
---this is so much better than my hacky ass idea before, though i must admire my creativity in the face of ignorance
+--this is so much better than my hacky idea before, though i must admire my creativity in the face of ignorance
 --lmfao
 
 local randomseed1 = math.random(-10e5, 10e5)
